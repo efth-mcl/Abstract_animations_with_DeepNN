@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import tensorflow as tf
-import os
 ################
 def ColorClass(D_S,Hot):
     D = D_S.shape[1]
