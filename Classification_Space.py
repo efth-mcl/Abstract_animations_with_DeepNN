@@ -88,7 +88,7 @@ loss = tf.reduce_mean(-tf.reduce_sum(TrOut * tf.log(PrOut+1e-12), reduction_indi
 
 #Regularization for smoother aproximation
 reg = tf.nn.l2_loss(W_fc1)+tf.nn.l2_loss(W_fc3)+tf.nn.l2_loss(W_fc2)+tf.nn.l2_loss(W_fc4)
-loss = tf.reduce_mean(cross_entropy+0.001*reg)
+loss = tf.reduce_mean(loss+0.001*reg)
 
 #Accuracy
 correct_prediction = tf.equal(tf.argmax(PrOut,1), tf.argmax(Y,1))
@@ -116,8 +116,6 @@ while Loss>6e-2:
         Z.append(np.rot90(z, 1))
     i+=1
 
-# plt.grid(gridflag)
-
 def animate(i):
     ax.clear()
     extent = (xi, xf, yi, yf)
@@ -126,4 +124,3 @@ def animate(i):
 ani = animation.FuncAnimation(fig, animate, frames = len(Z), interval = 10, blit= False, repeat = True)
 
 plt.show()
-
