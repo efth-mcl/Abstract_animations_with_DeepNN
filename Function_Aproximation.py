@@ -81,7 +81,7 @@ fig,ax = plt.subplots()
 Z=[]
 Loss=100
 i=0
-# MinLoss = 6e-2 # for Regularization, smaller MinLoss can't be achieved
+# MinLoss = 6e-2 # with Regularization, smaller MinLoss can't be achieved
 MinLoss=1e-3
 while Loss>MinLoss:
     train_step.run(feed_dict={Input: X, TrOut: Y})
