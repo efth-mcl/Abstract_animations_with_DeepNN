@@ -62,7 +62,7 @@ plt.show()
 Input = tf.placeholder(tf.float32, [None, D])
 TrOut = tf.placeholder(tf.float32, [None, K]) #True Output
 
-#1st Hiden Full Donnected Layer
+#1st Hiden Full Connected Layer
 W_fc1 = tf.Variable(tf.random_uniform([D,25]))*0.1
 b_fc1 = tf.Variable(tf.random_uniform([25]))*0.1
 h_fc1 = tf.nn.relu(tf.matmul(Input, W_fc1) + b_fc1)
@@ -114,8 +114,6 @@ while Loss>6e-2:
         z = (np.argmax(z, axis = 1)).reshape(numx,numy)
         Z.append(np.rot90(z, 1))
     i+=1
-
-# plt.grid(gridflag)
 
 def animate(i):
     ax.clear()
