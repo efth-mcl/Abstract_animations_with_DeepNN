@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import tensorflow as tf
-import os
 ################
 def ColorClass(D_S,Hot):
     D = D_S.shape[1]
@@ -63,7 +62,7 @@ plt.show()
 Input = tf.placeholder(tf.float32, [None, D])
 TrOut = tf.placeholder(tf.float32, [None, K]) #True Output
 
-#1st Hiden Full Donnected Layer
+#1st Hiden Full Connected Layer
 W_fc1 = tf.Variable(tf.random_uniform([D,25]))*0.1
 b_fc1 = tf.Variable(tf.random_uniform([25]))*0.1
 h_fc1 = tf.nn.relu(tf.matmul(Input, W_fc1) + b_fc1)

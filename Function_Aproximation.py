@@ -42,7 +42,7 @@ brange=1
 Input = tf.placeholder(tf.float32, [None, D])
 TrOut = tf.placeholder(tf.float32, [None, K]) #True Output
 
-#1st Hiden Full Donnected Layer
+#1st Hiden Full Connected Layer
 W_fc1 = tf.Variable(tf.random_uniform([D,25],-Wrange,Wrange))
 b_fc1 = tf.Variable(tf.random_uniform([25],-brange,brange))
 h_fc1 = tf.tanh(tf.matmul(Input, W_fc1) + b_fc1)
@@ -81,7 +81,7 @@ fig,ax = plt.subplots()
 Z=[]
 Loss=100
 i=0
-# MinLoss = 6e-2 # for Regularization, smaller MinLoss can't be achieved
+# MinLoss = 6e-2 # with Regularization, smaller MinLoss can't be achieved
 MinLoss=1e-3
 while Loss>MinLoss:
     train_step.run(feed_dict={Input: X, TrOut: Y})
