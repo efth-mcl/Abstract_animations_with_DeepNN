@@ -42,7 +42,7 @@ brange=1
 Input = tf.placeholder(tf.float32, [None, D])
 TrOut = tf.placeholder(tf.float32, [None, K]) #True Output
 
-#1st Hiden Full Donnected Layer
+#1st Hiden Full Connected Layer
 W_fc1 = tf.Variable(tf.random_uniform([D,25],-Wrange,Wrange))
 b_fc1 = tf.Variable(tf.random_uniform([25],-brange,brange))
 h_fc1 = tf.tanh(tf.matmul(Input, W_fc1) + b_fc1)
