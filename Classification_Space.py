@@ -1,3 +1,7 @@
+#########################################
+# Abstract animation with Deep Learning #
+#########################################
+
 import urllib.request
 import numpy as np
 import matplotlib.pyplot as plt
